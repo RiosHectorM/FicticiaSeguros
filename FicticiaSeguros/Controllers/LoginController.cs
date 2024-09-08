@@ -43,11 +43,11 @@ namespace FicticiaSeguros.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> SignIn(string mail, string pass)
+        public async Task<IActionResult> SignIn(string userMail, string userPass)
         {
-            
-            User userFinded = await _userService.GetUser(mail, Utils.HashPassword(pass));
+            User userFinded = await _userService.GetUser(userMail, Utils.HashPassword(userPass));
             if (userFinded == null)
             {
                 ViewData["Message"] = "User not found";
@@ -70,6 +70,7 @@ namespace FicticiaSeguros.Controllers
                 new ClaimsPrincipal(claimsIdentity),
                 properties
                 );
+
             return RedirectToAction("Index", "Home");
         }
     }

@@ -32,7 +32,6 @@
                             <input class="form-control mb-3" type="text" placeholder="Nombre Completo" asp-for="UserName" required />
                             <input class="form-control mb-3" type="text" placeholder="Correo" required asp-for="UserMail" />
                             <input class="form-control mb-3" type="password" placeholder="Contraseña" required asp-for="UserPass" />
-                            <input type="file" class="form-control mb-3" name="Imagen">
                             <div class="d-grid gap-2 mb-3">
                                 <button class="btn btn-primary" type="submit">Registrate</button>
                             </div>
@@ -45,7 +44,7 @@
                                     </div>
                                 </div>
                             }
-                            ¿Ya tienes una cuenta? <a href="@Url.Action("SignIn","Login")"> Iniciar Sesion</a>
+                            Si ya estas registrado <a href="@Url.Action("SignIn","Login")"> Iniciar Sesion</a>
 
                         </form>
 
