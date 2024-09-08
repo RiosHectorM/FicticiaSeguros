@@ -43,8 +43,10 @@ namespace FicticiaSeguros.Controllers
         {
             return View();
         }
+        [HttpPost]
         public async Task<IActionResult> SignIn(string mail, string pass)
         {
+            
             User userFinded = await _userService.GetUser(mail, Utils.HashPassword(pass));
             if (userFinded == null)
             {

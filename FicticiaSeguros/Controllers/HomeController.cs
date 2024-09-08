@@ -1,6 +1,9 @@
 using FicticiaSeguros.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace FicticiaSeguros.Controllers
 {
@@ -15,6 +18,17 @@ namespace FicticiaSeguros.Controllers
 
         public IActionResult Index()
         {
+            ClaimsPrincipal claimsUser = HttpContext.User;
+            string userName = "";
+
+            if (claimsUser.Identity.IsAuthenticated)
+            {
+                userName = claimsUser.Claims.Where(c => c.Type == ClaimTypes.Name)
+                    .Select(c => c.Value).SingleOrDefault();       
+            }
+
+            ViewData["userName"] = userName;
+
             return View();
         }
 
@@ -27,6 +41,12 @@ namespace FicticiaSeguros.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task<IActionResult> SignOut()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("SignIn", "Login");
         }
     }
 }

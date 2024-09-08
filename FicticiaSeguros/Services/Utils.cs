@@ -5,18 +5,22 @@ namespace FicticiaSeguros.Services
 {
     public class Utils
     {
-        public static string HashPassword (string password)
+        public static string HashPassword(string pass)
         {
-            StringBuilder sb = new StringBuilder ();
+
+            StringBuilder sb = new StringBuilder();
+
             using (SHA256 hash = SHA256.Create())
             {
-                Encoding encoding = Encoding.UTF8;
+                Encoding enc = Encoding.UTF8;
 
-                byte[] result = hash.ComputeHash(encoding.GetBytes (password));
-                foreach (byte b in result)  
-                    sb.Append (b.ToString("x2"));
+                byte[] result = hash.ComputeHash(enc.GetBytes(pass));
+
+                foreach (byte b in result)
+                    sb.Append(b.ToString("x2"));
             }
-            return sb.ToString ();
+            Console.WriteLine("Hashed password: " + sb.ToString());
+            return sb.ToString();
         }
     }
 }
