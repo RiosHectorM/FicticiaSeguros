@@ -20,9 +20,9 @@ namespace FicticiaSeguros.Migrations.Person
                     Dni = table.Column<long>(type: "bigint", nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    IsDriver = table.Column<bool>(type: "bit", nullable: true),
-                    UsesGlasses = table.Column<bool>(type: "bit", nullable: true),
-                    IsDiabetic = table.Column<bool>(type: "bit", nullable: true),
+                    IsDriver = table.Column<bool>(type: "bit", nullable: false),
+                    UsesGlasses = table.Column<bool>(type: "bit", nullable: false),
+                    IsDiabetic = table.Column<bool>(type: "bit", nullable: false),
                     OtherDiseases = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>

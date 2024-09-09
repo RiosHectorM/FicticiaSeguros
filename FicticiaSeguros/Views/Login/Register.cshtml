@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Registrarse</title>
+    <title>Register</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
@@ -23,17 +23,17 @@
 
                 <div class="card">
                     <div class="card-header">
-                        Registrate
+                        Register
                     </div>
                     <div class="card-body">
 
                         <form asp-controller="Login" asp-action="Register" method="post" enctype="multipart/form-data">
 
-                            <input class="form-control mb-3" type="text" placeholder="Nombre Completo" asp-for="UserName" required />
-                            <input class="form-control mb-3" type="text" placeholder="Correo" required asp-for="UserMail" />
-                            <input class="form-control mb-3" type="password" placeholder="Contraseña" required asp-for="UserPass" />
+                            <input class="form-control mb-3" type="text" placeholder="Name" asp-for="UserName" required />
+                            <input class="form-control mb-3" type="text" placeholder="Mail" required asp-for="UserMail" />
+                            <input class="form-control mb-3" type="password" placeholder="Password" required asp-for="UserPass" />
                             <div class="d-grid gap-2 mb-3">
-                                <button class="btn btn-primary" type="submit">Registrate</button>
+                                <button class="btn btn-primary" type="submit">Register</button>
                             </div>
                             @if (ViewData["Mensaje"] != null)
                             {
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                             }
-                            Si ya estas registrado <a href="@Url.Action("SignIn","Login")"> Iniciar Sesion</a>
+                            If you are already registered <a href="@Url.Action("SignIn","Login")"> Login</a>
 
                         </form>
 

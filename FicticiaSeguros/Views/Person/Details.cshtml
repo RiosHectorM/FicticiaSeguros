@@ -1,0 +1,66 @@
+﻿@model FicticiaSeguros.Models.Person
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dni)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dni)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            Active
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+        <dt class = "col-sm-2">
+            Driver
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsDriver)
+        </dd>
+        <dt class = "col-sm-2">
+            Glasses
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UsesGlasses)
+        </dd>
+        <dt class = "col-sm-2">
+            IsDiabetic
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsDiabetic)
+        </dd>
+        <dt class = "col-sm-2">
+            Other Diseases
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OtherDiseases)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-principal" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a class="btn btn-danger" asp-action="Index">Back to List</a>
+</div>

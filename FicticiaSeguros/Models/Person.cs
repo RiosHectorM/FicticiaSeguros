@@ -16,9 +16,9 @@ namespace FicticiaSeguros.Models
         public Gender Gender { get; set; }
 
         public bool IsActive { get; set; }
-        public bool? IsDriver { get; set; }
-        public bool? UsesGlasses { get; set; }
-        public bool? IsDiabetic { get; set; }
+        public bool IsDriver { get; set; }
+        public bool UsesGlasses { get; set; }
+        public bool IsDiabetic { get; set; }
 
         [MaxLength(500, ErrorMessage = "No debe exceder los 500 caracteres")]
         public string? OtherDiseases { get; set; }

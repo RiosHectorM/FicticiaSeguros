@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>IniciarSesion</title>
+    <title>Login</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
@@ -19,16 +19,16 @@
 
                 <div class="card">
                     <div class="card-header">
-                        Iniciar Sesion
+                        Login 
                     </div>
                     <div class="card-body">
 
                         <form asp-controller="Login" asp-action="SignIn" method="post">
 
-                            <input class="form-control mb-3" type="text" placeholder="Correo" required name="userMail" />
-                            <input class="form-control mb-3" type="password" placeholder="Contraseña" required name="userPass" />
+                            <input class="form-control mb-3" type="text" placeholder="Mail" required name="userMail" />
+                            <input class="form-control mb-3" type="password" placeholder="Password" required name="userPass" />
                             <div class="d-grid gap-2 mb-3">
-                                <button class="btn btn-primary" type="submit">Iniciar Sesion</button>
+                                <button class="btn btn-primary" type="submit">Login</button>
                             </div>
                             @if (ViewData["Mensaje"] != null)
                             {
@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                             }
-                            Crear una cuenta de usuario <a href="@Url.Action("Register","Login")"> Registraste</a>
+                            Create a user account <a href="@Url.Action("Register","Login")"> Register</a>
 
                         </form>
 

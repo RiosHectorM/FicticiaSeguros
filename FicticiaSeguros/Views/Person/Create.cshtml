@@ -1,0 +1,65 @@
+﻿@model FicticiaSeguros.Models.Person
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dni" class="control-label"></label>
+                <input asp-for="Dni" class="form-control" />
+                <span asp-validation-for="Dni" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label asp-for="Gender" class="control-label"></label>
+                <select asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control"></select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" asp-for="IsActive">
+                <label class="form-check-label" for="IsActive">@Html.DisplayNameFor(model => model.IsActive)</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" asp-for="IsDriver">
+                <label class="form-check-label" for="IsDriver">@Html.DisplayNameFor(model => model.IsDriver)</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" asp-for="UsesGlasses">
+                <label class="form-check-label" for="UsesGlasses">@Html.DisplayNameFor(model => model.UsesGlasses)</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" asp-for="IsDiabetic">
+                <label class="form-check-label" for="IsDiabetic">@Html.DisplayNameFor(model => model.IsDiabetic)</label>
+            </div>
+
+            <div class="form-group my-2">
+                <label asp-for="OtherDiseases" class="control-label"></label>
+                <textarea asp-for="OtherDiseases" class="form-control form-control-textarea" rows="3"></textarea>
+                <span asp-validation-for="OtherDiseases" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-danger" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
