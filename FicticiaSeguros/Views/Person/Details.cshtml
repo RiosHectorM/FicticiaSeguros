@@ -47,7 +47,7 @@
             @Html.DisplayFor(model => model.UsesGlasses)
         </dd>
         <dt class = "col-sm-2">
-            IsDiabetic
+            Diabetic
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IsDiabetic)
@@ -61,6 +61,6 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-principal" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a class="btn btn-danger" asp-action="Index">Back to List</a>
 </div>
