@@ -9,9 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// Contexto de Usuarios
 builder.Services.AddDbContext<UserContext>(o =>
 {
     o.UseSqlServer(builder.Configuration.GetConnectionString("StringSQL"));
+});
+// Contexto de Personas 
+builder.Services.AddDbContext<PersonContext>(p =>
+{
+    p.UseSqlServer(builder.Configuration.GetConnectionString("StringSQL"));
 });
 
 builder.Services.AddScoped<IUserService, UserService>();
